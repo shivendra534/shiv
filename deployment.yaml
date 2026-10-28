@@ -1,19 +1,19 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: set12-deployment
+  name: set13-deployment
 spec:
-  replicas: 1
+  replicas: 3
   selector:
     matchLabels:
-      app: set12-app
+      app: rollout-app
   template:
     metadata:
       labels:
-        app: set12-app
+        app: rollout-app
     spec:
       containers:
-      - name: set12-container
-        image: nginx:alpine
+      - name: nginx-container
+        image: nginx:1.23.0-alpine
         ports:
         - containerPort: 80
